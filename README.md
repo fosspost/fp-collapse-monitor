@@ -1,8 +1,14 @@
+![](https://i.imgur.com/arbwjkS.png)
+
 # FOSS Post Collapse Monitor
+
+> The world has changed. I see it in the water. I feel it in the Earth. I smell it in the air. Much that once was, is lost, For none now live who remember it. - J. R. R. Tolkien.
+
+Simple out-of-the-box browser for collapse maps worldwide.
 
 ![https://i.imgur.com/LSyMWEe.png](https://i.imgur.com/LSyMWEe.png)
 
-Simple out-of-the-box browser for collapse maps worldwide.
+
 
 There are many indicators for a possible collapse in human civilization, motivated by climate change and other elements. Many people started carefully monitoring these elements in order remain alerted as much as possible, and make sure they are prepared for what is to come.
 

@@ -1,8 +1,13 @@
-![](https://i.imgur.com/arbwjkS.png)
+
+<p align="center">
+  <a href="https://fosspost.org">
+    <img src="https://i.imgur.com/arbwjkS.png" width="256"/>
+  </a>
+</p>
 
 # FOSS Post Collapse Monitor
 
-> The world has changed. I see it in the water. I feel it in the Earth. I smell it in the air. Much that once was, is lost, For none now live who remember it. - J. R. R. Tolkien.
+> The world has changed. I see it in the water. I feel it in the Earth. I smell it in the air. Much that once was, is lost. For none now live, who remember it. - J. R. R. Tolkien.
 
 Simple out-of-the-box browser for collapse maps worldwide.
 

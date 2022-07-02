@@ -1,0 +1,169 @@
+#!/usr/bin/env python
+# Muhammed Hanny Sabbagh, FOSS Post, 2022 <email@mhsabbagh.com, contact@fosspost.org>
+# Licensed under the GPLv3 license (Attached).
+
+import gi, os
+gi.require_version('WebKit2', '4.0')
+gi.require_version('Gtk', '3.0')
+
+from gi.repository import Gtk
+from gi.repository import WebKit2 as Webkit
+
+possible_icon_paths = [
+    "/usr/share/pixmaps/fp-collapse-monitor.png",
+    os.path.dirname(os.path.realpath(__file__)) + "/data/fp-collapse-monitor.png"
+]
+possible_ui_file_locations = [
+    "/usr/share/fp-collapse-monitor/ui.glade",
+    "/usr/local/share/fp-collapse-monitor/ui.glade",
+    os.path.dirname(os.path.realpath(__file__)) + "/ui/ui.glade"
+]
+
+def iconclicked(self, icon, event):
+  aboutwindow.run()
+  aboutwindow.hide()
+  
+def webviewchanged1(self, dummy):
+  urlbar1.set_text(webview1.get_uri())
+
+def webviewchanged2(self, dummy):
+  urlbar2.set_text(webview2.get_uri())
+
+def webviewchanged3(self, dummy):
+  urlbar3.set_text(webview3.get_uri())
+
+def webviewchanged4(self, dummy):
+  urlbar4.set_text(webview4.get_uri())
+
+def webviewchanged5(self, dummy):
+  urlbar5.set_text(webview5.get_uri())
+
+def webviewchanged6(self, dummy):
+  urlbar6.set_text(webview6.get_uri())
+
+def webviewchanged7(self, dummy):
+  urlbar7.set_text(webview7.get_uri())
+
+# Load the interface file.
+builder = Gtk.Builder()
+for filename in possible_ui_file_locations:
+  if os.path.exists(filename):
+    builder.add_from_file(filename)
+    break
+
+
+scrolledwindow1 = builder.get_object("scrolledwindow1")
+urlbar1 = builder.get_object("urlbar1")
+scrolledwindow2 = builder.get_object("scrolledwindow2")
+urlbar2 = builder.get_object("urlbar2")
+scrolledwindow3 = builder.get_object("scrolledwindow3")
+urlbar3 = builder.get_object("urlbar3")
+scrolledwindow4 = builder.get_object("scrolledwindow4")
+urlbar4 = builder.get_object("urlbar4")
+scrolledwindow5 = builder.get_object("scrolledwindow5")
+urlbar5 = builder.get_object("urlbar5")
+scrolledwindow6 = builder.get_object("scrolledwindow6")
+urlbar6 = builder.get_object("urlbar6")
+scrolledwindow7 = builder.get_object("scrolledwindow7")
+urlbar7 = builder.get_object("urlbar7")
+
+label1 = builder.get_object("label1")
+label2 = builder.get_object("label2")
+label3 = builder.get_object("label3")
+label4 = builder.get_object("label4")
+label5 = builder.get_object("label5")
+label6 = builder.get_object("label6")
+label7 = builder.get_object("label7")
+
+settings = Webkit.Settings.new()
+settings.set_enable_webgl(True)
+settings.set_enable_encrypted_media(True)
+
+# First one is the default.
+webview1 = Webkit.WebView.new()
+webview1.set_settings(settings)
+webview1.load_uri("https://rsoe-edis.org/eventMap")
+scrolledwindow1.add(webview1)
+urlbar1.set_text(webview1.get_uri())
+urlbar1.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar1.connect("icon-press", iconclicked)
+scrolledwindow1.connect("event", webviewchanged1)
+label1.set_text("Emergency and Disaster Information Service (RSOE)")
+
+webview2 = Webkit.WebView.new()
+webview2.set_settings(settings)
+webview2.load_uri("https://www.fmglobal.com/research-and-resources/nathaz-toolkit/flood-map")
+scrolledwindow2.add(webview2)
+urlbar2.set_text(webview2.get_uri())
+urlbar2.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar2.connect("icon-press", iconclicked)
+scrolledwindow2.connect("event", webviewchanged2)
+label2.set_text("Natural Hazards Map (FML Global)")
+
+webview3 = Webkit.WebView.new()
+webview3.set_settings(settings)
+webview3.load_uri("https://disasteralert.pdc.org/disasteralert/")
+scrolledwindow3.add(webview3)
+urlbar3.set_text(webview3.get_uri())
+urlbar3.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar3.connect("icon-press", iconclicked)
+scrolledwindow3.connect("event", webviewchanged3)
+label3.set_text("Disaster Alert (Pdc.org)")
+
+webview4 = Webkit.WebView.new()
+webview4.set_settings(settings)
+webview4.load_uri("https://www.ncei.noaa.gov/access/billions/mapping")
+scrolledwindow4.add(webview4)
+urlbar4.set_text(webview4.get_uri())
+urlbar4.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar4.connect("icon-press", iconclicked)
+scrolledwindow4.connect("event", webviewchanged4)
+label4.set_text("USA Disaster and Risk Mapping (NCEI)")
+
+webview5 = Webkit.WebView.new()
+webview5.set_settings(settings)
+webview5.load_uri("https://www.wri.org/aqueduct/tools")
+scrolledwindow5.add(webview5)
+urlbar5.set_text(webview5.get_uri())
+urlbar5.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar5.connect("icon-press", iconclicked)
+scrolledwindow5.connect("event", webviewchanged5)
+label5.set_text("Aqueduct Maps (Wri.org)")
+
+webview6 = Webkit.WebView.new()
+webview6.set_settings(settings)
+webview6.load_uri("https://interactive-atlas.ipcc.ch/regional-information")
+scrolledwindow6.add(webview6)
+urlbar6.set_text(webview6.get_uri())
+urlbar6.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar6.connect("icon-press", iconclicked)
+scrolledwindow6.connect("event", webviewchanged6)
+label6.set_text("IPCC WGI Interactive Atlas (IPCC.ch)")
+
+webview7 = Webkit.WebView.new()
+webview7.set_settings(settings)
+webview7.load_uri("https://2050.earth/")
+scrolledwindow7.add(webview7)
+urlbar7.set_text(webview7.get_uri())
+urlbar7.set_icon_activatable(Gtk.EntryIconPosition(1), True)
+urlbar7.connect("icon-press", iconclicked)
+scrolledwindow7.connect("event", webviewchanged7)
+label7.set_text("Earth 2050 (Kaspersky)")
+
+# Top window.
+window = builder.get_object("window")
+window.set_title("FOSS Post Collapse Monitor")
+window.set_deletable(False)
+aboutwindow = builder.get_object("aboutwindow")
+window.connect("delete-event", Gtk.main_quit)
+
+# Icon work.
+for filename in possible_icon_paths:
+  if os.path.exists(filename):
+    window.set_icon_from_file(filename)
+    aboutwindow.set_icon_from_file(filename)
+    break
+
+if __name__ == "__main__": 
+  window.show_all()
+  Gtk.main()

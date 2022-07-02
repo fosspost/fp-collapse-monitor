@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=FOSS Post Collapse Monitor
+GenericName=FOSS Post Collapse Monitor
+Comment=Simple out-of-the-box browser for collapse maps worldwide.
+Exec=fp-collapse-monitor
+Terminal=false
+Type=Application
+Icon=fp-collapse-monitor
+Categories=GTK;WebBrowser;
+StartupNotify=false

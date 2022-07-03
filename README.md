@@ -33,3 +33,5 @@ The following maps are included:
 If you restart the app, then you will lose your progress (Which is why we have removed the close button, to make it more difficult to close the app), but if you don't, then you can track the variables/elements that you specify from any of these interactive maps without having to open their websites every time you want to check them.
 
 The software is licensed under the GPLv3 license. Written in Python and WebKitGtk2. Currently the code is not in best shape (So many duplication and lazy coding), but it does the job for a small app like this.
+
+Please do not try to submit a pull request. If you have anything to comment on then open an issue.

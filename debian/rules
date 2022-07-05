@@ -2,5 +2,5 @@
 %:
 	dh $@
 override_dh_auto_install:
-	python setup.py install --root=debian/green-recorder --install-layout=deb --install-scripts=/usr/bin/
+	python setup.py install --root=debian/fp-collapse-monitor --install-layout=deb --install-scripts=/usr/bin/
 override_dh_auto_build:

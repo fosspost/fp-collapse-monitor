@@ -1,0 +1,21 @@
+name: fp-collapse-monitor
+summary: Simple out-of-the-box browser for collapse maps worldwide.
+description: |
+      Simple out-of-the-box browser for collapse maps worldwide.
+version: git
+grade: stable
+confinement: strict
+base: core22
+architectures:
+  - build-on: [amd64]
+
+apps:
+  fp-collapse-monitor:
+    command: bin/fp-collapse-monitor
+    plugs: [network]
+
+parts:
+  fp-collapse-monitor:
+    plugin: python
+    source: https://github.com/fosspost/fp-collapse-monitor.git
+    stage-packages: [python3-gi, gir1.2-webkit2-4.0]

@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 data_files = [ ("share/fp-collapse-monitor", ["ui/ui.glade"]),
                     ("share/pixmaps", ["data/fp-collapse-monitor.png"]),

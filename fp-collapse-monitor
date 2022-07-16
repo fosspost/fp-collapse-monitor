@@ -9,6 +9,9 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import WebKit2 as Webkit
 
+import os
+gladepath = os.path.join(os.path.dirname(__file__), 'ui', 'ui.glade')
+
 possible_icon_paths = [
     "/usr/share/pixmaps/fp-collapse-monitor.png",
     os.path.dirname(os.path.realpath(__file__)) + "/data/fp-collapse-monitor.png"

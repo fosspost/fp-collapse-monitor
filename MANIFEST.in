@@ -1,0 +1,3 @@
+include ui/ui.glade
+include data/fp-collapse-monitor.png
+include data/fp-collapse-monitor.desktop

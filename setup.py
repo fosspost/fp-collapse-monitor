@@ -1,8 +1,8 @@
 from setuptools import setup
 
-data_files = [ ("share/fp-collapse-monitor", ["ui/ui.glade"]),
-                    ("share/pixmaps", ["data/fp-collapse-monitor.png"]),
-                     ("share/applications", ["data/fp-collapse-monitor.desktop"]) ] 
+data_files = [ ("/usr/share/fp-collapse-monitor", ["ui/ui.glade"]),
+                    ("/usr/share/pixmaps", ["data/fp-collapse-monitor.png"]),
+                     ("/usr/share/applications", ["data/fp-collapse-monitor.desktop"]) ] 
 
 setup(name = "fp-collapse-monitor",
       version = "1.0",
@@ -12,5 +12,6 @@ setup(name = "fp-collapse-monitor",
       url = "https://github.com/fosspost/fp-collapse-monitor",
       license='GPLv3',
       scripts=['fp-collapse-monitor'],
-      data_files=data_files)
+      data_files=data_files,
+      include_package_data=True)
 

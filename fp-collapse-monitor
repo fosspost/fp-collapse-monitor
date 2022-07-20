@@ -11,12 +11,12 @@ from gi.repository import WebKit2 as Webkit
 
 possible_icon_paths = [
     "/usr/share/pixmaps/fp-collapse-monitor.png",
-    os.path.dirname(os.path.realpath(__file__)) + "/data/fp-collapse-monitor.png"
+    os.path.dirname(os.path.realpath(__file__)) + "fp-collapse-monitor.png"
 ]
 possible_ui_file_locations = [
     "/usr/share/fp-collapse-monitor/ui.glade",
     "/usr/local/share/fp-collapse-monitor/ui.glade",
-    os.path.dirname(os.path.realpath(__file__)) + "/ui/ui.glade"
+    os.path.dirname(os.path.realpath(__file__)) + "ui.glade"
 ]
 
 def iconclicked(self, icon, event):

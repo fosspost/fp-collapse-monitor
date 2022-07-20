@@ -14,8 +14,6 @@ apps:
     command: bin/fp-collapse-monitor
     plugs: [home, network]
     extensions: [gnome-3-38]
-    environment:
-      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages:$SNAP/gnome-platform/usr/lib/python3/dist-packages
       
 parts:
   fp-collapse-monitor:

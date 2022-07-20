@@ -12,7 +12,7 @@ architectures:
 apps:
   fp-collapse-monitor:
     command: bin/fp-collapse-monitor
-    plugs: [home, network]
+    plugs: [home, network, x11, desktop]
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
       GI_TYPELIB_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/girepository-1.0/
@@ -22,7 +22,8 @@ parts:
   fp-collapse-monitor:
     plugin: python
     source: https://github.com/fosspost/fp-collapse-monitor.git
-    stage-packages: [python3-gi, gir1.2-webkit2-4.0, libgdk-pixbuf2.0-0, libpng16-16]
+    stage-packages: [python3-gi, gir1.2-webkit2-4.0, libgdk-pixbuf2.0-0, libpng16-16]\
+    after: [desktop-gtk3]
     
   dump-files:
     plugin: dump

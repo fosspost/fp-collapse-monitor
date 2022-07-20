@@ -15,7 +15,7 @@ apps:
     plugs: [home, network]
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
-      GI_TYPELIB_PATH: $SNAP/usr/lib/x86_64-linux-gnu/girepository-1.0/
+      GI_TYPELIB_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/girepository-1.0/
       
 parts:
   fp-collapse-monitor:
@@ -38,4 +38,6 @@ layout:
     bind: $SNAP/usr/share/applications
   /usr/share/pixmaps:
     bind: $SNAP/usr/share/pixmaps
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0:
+    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
 

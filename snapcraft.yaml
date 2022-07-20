@@ -18,6 +18,7 @@ parts:
   fp-collapse-monitor:
     plugin: python
     source: https://github.com/fosspost/fp-collapse-monitor.git
+    build-packages: [python3-gi, gir1.2-webkit2-4.0]
     stage-packages: [python3-gi, gir1.2-webkit2-4.0]
     
   dump-files:

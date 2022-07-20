@@ -13,13 +13,13 @@ apps:
   fp-collapse-monitor:
     command: bin/fp-collapse-monitor
     plugs: [home, network]
-    extensions: [gnome-3-38]
+    environment:
+      PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
       
 parts:
   fp-collapse-monitor:
     plugin: python
     source: https://github.com/fosspost/fp-collapse-monitor.git
-    build-packages: [python3-pkg-resources]
     stage-packages: [python3-gi, gir1.2-webkit2-4.0]
     
   dump-files:

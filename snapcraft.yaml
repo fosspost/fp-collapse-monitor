@@ -5,17 +5,34 @@ description: |
 version: git
 grade: stable
 confinement: strict
-base: core22
+base: core20
 architectures:
   - build-on: [amd64]
 
 apps:
   fp-collapse-monitor:
     command: bin/fp-collapse-monitor
-    plugs: [network]
+    plugs: [home, network]
 
 parts:
   fp-collapse-monitor:
     plugin: python
     source: https://github.com/fosspost/fp-collapse-monitor.git
     stage-packages: [python3-gi, gir1.2-webkit2-4.0]
+    
+  dump-files:
+    plugin: dump
+    source: .
+    organize:
+      ui.glade: usr/share/fp-collapse-monitor/
+      fp-collapse-monitor.png: usr/share/pixmaps/
+      fp-collapse-monitor.desktop: usr/share/applications/
+    
+layout:
+  /usr/share/fp-collapse-monitor:
+    bind: $SNAP/usr/share/fp-collapse-monitor
+  /usr/share/applications:
+    bind: $SNAP/usr/share/applications
+  /usr/share/pixmaps:
+    bind: $SNAP/usr/share/pixmaps
+

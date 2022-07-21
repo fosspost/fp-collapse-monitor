@@ -11,7 +11,7 @@ architectures:
 
 apps:
   fp-collapse-monitor:
-    command: desktop-launch bin/fp-collapse-monitor
+    command: bin/desktop-launch bin/fp-collapse-monitor
     plugs: [home, network, x11, desktop, desktop-launch]
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH

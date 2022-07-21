@@ -23,6 +23,8 @@ parts:
   fp-collapse-monitor:
     plugin: python
     source: https://github.com/fosspost/fp-collapse-monitor.git
+    build-environment:
+      - PYTHONUSERBASE: $SNAP_DATA/
     build-packages: [python3-pkg-resources]
     stage-packages: [python3-gi, gir1.2-webkit2-4.0, libgdk-pixbuf2.0-0, libpng16-16]
     

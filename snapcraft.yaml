@@ -11,7 +11,7 @@ architectures:
 
 apps:
   fp-collapse-monitor:
-    command: bin/python3.9 bin/fp-collapse-monitor
+    command: bin/python3.9 $SNAP/bin/fp-collapse-monitor
     extensions: [gnome-3-38]
     plugs:
         - home

@@ -20,22 +20,6 @@ apps:
         - desktop
         - desktop-legacy
         - gsettings
-        - gnome-3-38-2004:
-          default-provider: gnome-3-38-2004
-          interface: content
-          target: $SNAP/gnome-platform
-        - gtk-3-themes:
-          default-provider: gtk-common-themes
-          interface: content
-          target: $SNAP/data-dir/themes
-        - icon-themes:
-          default-provider: gtk-common-themes
-          interface: content
-          target: $SNAP/data-dir/icons
-        - sound-themes:
-          default-provider: gtk-common-themes
-          interface: content
-          target: $SNAP/data-dir/sounds
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
       GI_TYPELIB_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/girepository-1.0/

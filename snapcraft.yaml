@@ -12,8 +12,7 @@ architectures:
 apps:
   fp-collapse-monitor:
     command: bin/fp-collapse-monitor
-    extensions: [gnome-3-38]
-    plugs: [home, network, x11, desktop, desktop-launch, gnome-3-38-2004]
+    plugs: [home, network, x11, desktop]
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
       GI_TYPELIB_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/girepository-1.0/

@@ -39,6 +39,9 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/include/
       cp -r /usr/include/python3.9 $SNAPCRAFT_PART_INSTALL/usr/include/python3.9
       snapcraftctl build
+    override-prime: |
+      snapcraftctl prime
+      ln -s /usr/lib/python3/dist-packages/gi/_gi.cpython-{38m,39m}-x86_64-linux-gnu.so
     
   dump-files:
     plugin: dump

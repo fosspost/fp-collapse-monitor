@@ -20,7 +20,6 @@ apps:
         - desktop
         - desktop-legacy
         - gsettings
-        -
         gnome-3-38-2004:
           default-provider: gnome-3-38-2004
           interface: content

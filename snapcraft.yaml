@@ -20,8 +20,6 @@ apps:
         - desktop
         - desktop-legacy
         - gsettings
-    environment:
-      PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
 parts:
   fp-collapse-monitor:
     plugin: python

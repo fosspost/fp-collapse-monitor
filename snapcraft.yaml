@@ -4,7 +4,7 @@ description: |
       Simple out-of-the-box browser for collapse maps worldwide.
 version: git
 grade: stable
-confinement: classic
+confinement: strict
 base: core20
 architectures:
   - build-on: [amd64]
@@ -12,7 +12,31 @@ architectures:
 apps:
   fp-collapse-monitor:
     command: bin/fp-collapse-monitor
-    plugs: [home, network, x11, desktop]
+    extensions: [gnome-3-38]
+    plugs:
+        - home
+        - network
+        - x11
+        - desktop
+        - desktop-legacy
+        - gsettings
+        -
+        gnome-3-38-2004:
+          default-provider: gnome-3-38-2004
+          interface: content
+          target: $SNAP/gnome-platform
+        gtk-3-themes:
+          default-provider: gtk-common-themes
+          interface: content
+          target: $SNAP/data-dir/themes
+        icon-themes:
+          default-provider: gtk-common-themes
+          interface: content
+          target: $SNAP/data-dir/icons
+        sound-themes:
+          default-provider: gtk-common-themes
+          interface: content
+          target: $SNAP/data-dir/sounds
     environment:
       PYTHONPATH: $SNAP/usr/lib/python3/site-packages:$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
       GI_TYPELIB_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/girepository-1.0/
@@ -43,5 +67,6 @@ layout:
   /usr/share/pixmaps:
     bind: $SNAP/usr/share/pixmaps
   /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0:
-    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
-
+    bind: $SNAP/gnome-platform/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
+  /usr/share/xml/iso-codes:
+    bind: $SNAP/gnome-platform/usr/share/xml/iso-codes

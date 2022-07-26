@@ -9,10 +9,6 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import WebKit2 as Webkit
 
-possible_icon_paths = [
-    "/usr/share/pixmaps/fp-collapse-monitor.png",
-    os.path.dirname(os.path.realpath(__file__)) + "fp-collapse-monitor.png"
-]
 possible_ui_file_locations = [
     "/usr/share/fp-collapse-monitor/ui.glade",
     "/usr/local/share/fp-collapse-monitor/ui.glade",
@@ -157,12 +153,8 @@ window.set_deletable(False)
 aboutwindow = builder.get_object("aboutwindow")
 window.connect("delete-event", Gtk.main_quit)
 
-# Icon work.
-for filename in possible_icon_paths:
-  if os.path.exists(filename):
-    window.set_icon_from_file(filename)
-    aboutwindow.set_icon_from_file(filename)
-    break
+window.set_icon_name("fp-collapse-monitor")
+aboutwindow.set_icon_name("fp-collapse-monitor")
 
 if __name__ == "__main__": 
   window.show_all()

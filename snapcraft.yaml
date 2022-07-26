@@ -27,10 +27,21 @@ parts:
   fp-collapse-monitor:
     plugin: python
     source: https://github.com/fosspost/fp-collapse-monitor.git
+    build-packages: [python3-pkg-resources, python3.9-venv, python3.9-dev]
+    stage-packages: [python3-gi, python3.9-venv, gir1.2-webkit2-4.0, libgdk-pixbuf2.0-0, libpng16-16]
     build-environment:
-      - PYTHONUSERBASE: $SNAP_DATA/
-    build-packages: [python3-pkg-resources]
-    stage-packages: [python3-gi, gir1.2-webkit2-4.0, libgdk-pixbuf2.0-0, libpng16-16]
+      - SNAPCRAFT_PYTHON_INTERPRETER: python3.9
+        # python3.9 lives in $SNAPCRAFT_PART_INSTALL/bin
+      - PATH: $SNAPCRAFT_PART_INSTALL/bin:$PATH
+      - PYTHONPATH: ''
+    override-build: |
+      # Work around a bug in snapcraft python plugin
+      # https://forum.snapcraft.io/t/build-a-snap-with-any-version-of-python-i-want/10420/8
+      rm -rf $SNAPCRAFT_PART_INSTALL/usr/lib/python3.9/distutils
+      cp -r /usr/lib/python3.9/distutils $SNAPCRAFT_PART_INSTALL/usr/lib/python3.9/distutils
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/include/
+      cp -r /usr/include/python3.9 $SNAPCRAFT_PART_INSTALL/usr/include/python3.9
+      snapcraftctl build
     
   dump-files:
     plugin: dump

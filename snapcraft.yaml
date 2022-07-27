@@ -41,10 +41,7 @@ parts:
       snapcraftctl build
     override-prime: |
       snapcraftctl prime
-      ln -s $SNAPCRAFT_PRIME/usr/lib/python3/dist-packages/gi/_gi.cpython-{38,39}-x86_64-linux-gnu.so
-      ls $SNAPCRAFT_PRIME
-      echo "---"
-      ls
+      ln $SNAPCRAFT_PRIME/usr/lib/python3/dist-packages/gi/_gi.cpython-{38,39}-x86_64-linux-gnu.so
     
   dump-files:
     plugin: dump

@@ -6,8 +6,8 @@ import pgi
 pgi.install_as_gi()
 
 import os
-gi.require_version('WebKit2', '4.0')
-gi.require_version('Gtk', '3.0')
+pgi.require_version('WebKit2', '4.0')
+pgi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk
 from gi.repository import WebKit2 as Webkit

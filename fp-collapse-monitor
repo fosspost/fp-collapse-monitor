@@ -156,8 +156,8 @@ window.set_deletable(False)
 aboutwindow = builder.get_object("aboutwindow")
 window.connect("delete-event", Gtk.main_quit)
 
-window.set_icon_name("fp-collapse-monitor")
-aboutwindow.set_icon_name("fp-collapse-monitor")
+window.set_icon_from_file("/usr/share/pixmaps/fp-collapse-monitor.png")
+aboutwindow.set_icon_from_file("/usr/share/pixmaps/fp-collapse-monitor.png")
 
 if __name__ == "__main__": 
   window.show_all()

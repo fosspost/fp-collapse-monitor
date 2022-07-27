@@ -2,7 +2,10 @@
 # Muhammed Hanny Sabbagh, FOSS Post, 2022 <email@mhsabbagh.com, contact@fosspost.org>
 # Licensed under the GPLv3 license (Attached).
 
-import gi, os
+import pgi
+pgi.install_as_gi()
+
+import os
 gi.require_version('WebKit2', '4.0')
 gi.require_version('Gtk', '3.0')
 

@@ -15,9 +15,9 @@ Simple out-of-the-box browser for collapse maps worldwide.
 
 
 
-There are many indicators for a possible collapse in human civilization, motivated by climate change and other elements. Many people started carefully monitoring these elements in order remain alerted as much as possible, and make sure they are prepared for what is to come.
+There are many indicators for a [possible collapse in human civilization](https://www.reddit.com/r/collapse), motivated by climate change and other elements. Many people started carefully monitoring these elements in order remain alerted as much as possible, and make sure they are prepared for what is to come.
 
-One can find many useful interactive maps online for this, but you don't always want to open them manually each time you want to check them. Additionally, you may want to keep your markings/edits on some of them (Which may support that unlike the others), and hence, putting all these maps in a different standalone window would give the best experience.
+One can find many useful interactive maps online which provide alerts about possible hazards, accidents and natural disasters, but you don't always want to open them manually each time you want to check them. Additionally, you may want to keep your markings/edits on some of them (Which may support that unlike the others), and hence, putting all these maps in a different standalone window would give the best experience.
 
 This is the idea of this small app; it is a web browser with 7 maps (Currently) which show different hazards alerts, disaster alerts, future projections for areas with high probability of floodings, earthquakes, natural disasters and many other interesting data.
 
@@ -31,6 +31,8 @@ The following maps are included:
 * Earth 2050 (Kaspersky): https://2050.earth
 
 If you restart the app, then you will lose your progress (Which is why we have removed the close button, to make it more difficult to close the app), but if you don't, then you can track the variables/elements that you specify from any of these interactive maps without having to open their websites every time you want to check them.
+
+![https://i.imgur.com/BkJTeOq.jpeg](https://i.imgur.com/BkJTeOq.jpeg)
 
 ### Installation
 
@@ -56,4 +58,4 @@ The software is licensed under the GPLv3 license. Written in Python and WebKitGt
 
 Please do not try to submit a pull request. If you have anything to comment on then open an issue.
 
-Developed mainly for the audience of FOSS Post: https://fosspos
+Developed mainly for the audience of FOSS Post: https://fosspost.org

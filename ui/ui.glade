@@ -9,7 +9,7 @@
     <property name="comments" translatable="yes">Simple out-of-the-box browser for collapse maps worldwide.</property>
     <property name="website">https://fosspost.org</property>
     <property name="authors">Muhammed Hanny Sabbagh &lt;email@mhsabbagh.com&gt;, FOSS Post.</property>
-    <property name="logo">../data/fp-collapse-monitor.png</property>
+    <property name="logo_icon_name">fp-collapse-monitor</property>
     <property name="license_type">gpl-3-0</property>
     <child type="titlebar">
       <placeholder/>

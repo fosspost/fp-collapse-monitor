@@ -60,3 +60,9 @@ layout:
     bind: $SNAP/gnome-platform/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
   /usr/share/xml/iso-codes:
     bind: $SNAP/gnome-platform/usr/share/xml/iso-codes
+
+plugs:
+  gtk-3-themes:
+    interface: content
+    target: $SNAP/data-dir/themes
+    default-provider: gtk-common-themes

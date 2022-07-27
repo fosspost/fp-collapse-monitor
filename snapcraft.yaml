@@ -20,6 +20,8 @@ apps:
         - desktop
         - desktop-legacy
         - gsettings
+    environment:
+      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
 parts:
   fp-collapse-monitor:
     plugin: python
@@ -39,9 +41,6 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/include/
       cp -r /usr/include/python3.9 $SNAPCRAFT_PART_INSTALL/usr/include/python3.9
       snapcraftctl build
-    override-prime: |
-      snapcraftctl prime
-      ln $SNAPCRAFT_PRIME/usr/lib/python3/dist-packages/gi/_gi.cpython-{38,39}-x86_64-linux-gnu.so
     
   dump-files:
     plugin: dump

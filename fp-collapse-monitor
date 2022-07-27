@@ -2,12 +2,9 @@
 # Muhammed Hanny Sabbagh, FOSS Post, 2022 <email@mhsabbagh.com, contact@fosspost.org>
 # Licensed under the GPLv3 license (Attached).
 
-import pgi
-pgi.install_as_gi()
-
-import os
-pgi.require_version('WebKit2', '4.0')
-pgi.require_version('Gtk', '3.0')
+import gi, os
+gi.require_version('WebKit2', '4.0')
+gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk
 from gi.repository import WebKit2 as Webkit
@@ -15,7 +12,11 @@ from gi.repository import WebKit2 as Webkit
 possible_ui_file_locations = [
     "/usr/share/fp-collapse-monitor/ui.glade",
     "/usr/local/share/fp-collapse-monitor/ui.glade",
-    os.path.dirname(os.path.realpath(__file__)) + "ui.glade"
+    os.path.dirname(os.path.realpath(__file__)) + "/ui/ui.glade"
+]
+possible_icon_paths = [
+    "/usr/share/pixmaps/fp-collapse-monitor.png",
+    os.path.dirname(os.path.realpath(__file__)) + "/data/fp-collapse-monitor.png"
 ]
 
 def iconclicked(self, icon, event):
@@ -156,8 +157,13 @@ window.set_deletable(False)
 aboutwindow = builder.get_object("aboutwindow")
 window.connect("delete-event", Gtk.main_quit)
 
-window.set_icon_from_file("/usr/share/pixmaps/fp-collapse-monitor.png")
-aboutwindow.set_icon_from_file("/usr/share/pixmaps/fp-collapse-monitor.png")
+
+# Icon work.
+for filename in possible_icon_paths:
+  if os.path.exists(filename):
+    window.set_icon_from_file(filename)
+    aboutwindow.set_icon_from_file(filename)
+    break
 
 if __name__ == "__main__": 
   window.show_all()

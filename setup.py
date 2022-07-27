@@ -1,8 +1,8 @@
 from setuptools import setup
 
-data_files = [ ("/usr/share/fp-collapse-monitor", ["ui.glade"]),
-                    ("/usr/share/pixmaps", ["fp-collapse-monitor.png"]),
-                     ("/usr/share/applications", ["fp-collapse-monitor.desktop"]) ] 
+data_files = [ ("/usr/share/fp-collapse-monitor", ["ui/ui.glade"]),
+                    ("/usr/share/pixmaps", ["data/fp-collapse-monitor.png"]),
+                     ("/usr/share/applications", ["data/fp-collapse-monitor.desktop"]) ] 
                      
 setup(name = "fp-collapse-monitor",
       version = "1.0",

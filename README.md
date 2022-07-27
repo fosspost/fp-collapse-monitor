@@ -32,6 +32,28 @@ The following maps are included:
 
 If you restart the app, then you will lose your progress (Which is why we have removed the close button, to make it more difficult to close the app), but if you don't, then you can track the variables/elements that you specify from any of these interactive maps without having to open their websites every time you want to check them.
 
+### Installation
+
+The application is quite simple.
+
+For Debian-based and Ubuntu-based distributions, you can download it as a [DEB package from the releases page](https://github.com/fosspost/fp-collapse-monitor/releases). Then, to install it just run:
+
+```bash
+sudo dpkg -i <replace_with_path_to_deb_file>
+```
+
+And you'll see it in the applications menu so that you can launch it.
+
+For other distributions, make sure that you have the `python3, python3-gi, gir1.2-webkit2-4.0` packages installed (Or what corresponds to them on your distribution), and then you can simply run the application with:
+
+```python
+python fp-collapse-monitor
+```
+
+### License & Contribution
+
 The software is licensed under the GPLv3 license. Written in Python and WebKitGtk2. Currently the code is not in best shape (So many duplication and lazy coding), but it does the job for a small app like this.
 
 Please do not try to submit a pull request. If you have anything to comment on then open an issue.
+
+Developed mainly for the audience of FOSS Post: https://fosspos

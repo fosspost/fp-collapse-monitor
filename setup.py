@@ -5,7 +5,7 @@ data_files = [ ("/usr/share/fp-collapse-monitor", ["ui/ui.glade"]),
                      ("/usr/share/applications", ["data/fp-collapse-monitor.desktop"]) ] 
                      
 setup(name = "fp-collapse-monitor",
-      version = "1.0",
+      version = "1.0.1",
       description = "Simple out-of-the-box browser for collapse maps worldwide.",
       author = "Muhammed Hanny Sabbagh", 
       author_email = "email@mhsabbagh.com",
